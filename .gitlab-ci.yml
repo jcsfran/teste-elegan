@@ -1,0 +1,37 @@
+image: devincommerce/php8-composer23:php8-composer23
+
+stages:
+  - build
+  - sniffer
+
+Build:
+  stage: build
+  artifacts:
+    expire_in: 1 days
+    when: on_success
+    paths:
+      - vendor
+  cache:
+    key: $CI_COMMIT_REF_NAME
+    policy: push
+    paths:
+      - vendor
+  script:
+    - composer install
+
+ComposerValidation:
+  stage: build
+  script:
+    - composer validate --strict
+
+CodeSniffer:
+  stage: sniffer
+  cache:
+    key: $CI_COMMIT_REF_NAME
+    policy: pull
+    paths:
+      - vendor
+  script:
+    - ./vendor/bin/phpcs
+  dependencies:
+    - Build
