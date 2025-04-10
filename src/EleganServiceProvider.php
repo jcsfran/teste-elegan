@@ -17,7 +17,7 @@ class EleganServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([$resourcesPath . '/publish' => public_path('elegan')]);
+        $this->publishes([__DIR__ . '/../resources/publish' => public_path('elegan')]);
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'elegan');
         $this->commands([
             GeneratePatchNoteCommand::class,
