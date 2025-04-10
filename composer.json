@@ -1,0 +1,27 @@
+{
+    "name": "labi9/elegan",
+    "type": "library",
+    "description": "Standardizes the documentation of the project routes and creates the documentation files via console.",
+    "require": {
+        "darkaonline/l5-swagger": "^8.4",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Labi9\\Elegan\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Labi9 Team"
+        }
+    ],
+    "extra": {
+        "laravel": {
+          "providers": [
+                "Labi9\\Elegan\\EleganServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT"
+}
