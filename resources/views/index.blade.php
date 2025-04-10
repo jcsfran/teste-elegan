@@ -38,7 +38,7 @@
 
             <div class="patch-notes-wrapper">
                 @foreach ($notes as $note)
-                    <x-elegan.container :info="$note['info']" />
+                    <x-elegan-container :info="$note['info']" />
                 @endforeach
             </div>
         @else
