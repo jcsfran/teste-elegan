@@ -1,9 +1,9 @@
 <?php
 
-namespace Labi9\Elegan\Console;
+namespace Jcsfran\Elegan\Console;
 
 use Illuminate\Console\Command;
-use Labi9\Elegan\EleganHelper;
+use Jcsfran\Elegan\EleganHelper;
 
 class GenerateRouteCommand extends Command
 {

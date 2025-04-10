@@ -1,8 +1,8 @@
 <?php
 
-namespace Labi9\Elegan;
+namespace Jcsfran\Elegan;
 
-use Labi9\Elegan\Actions\{
+use Jcsfran\Elegan\Actions\{
     DestroyAction,
     IndexAction,
     ShowAction,

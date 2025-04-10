@@ -1,5 +1,5 @@
 {
-    "name": "labi9/elegan",
+    "name": "jcsfran/elegan",
     "type": "library",
     "description": "Standardizes the documentation of the project routes and creates the documentation files via console.",
     "require": {
@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Labi9\\Elegan\\": "src"
+            "Jcsfran\\Elegan\\": "src"
         }
     },
     "authors": [
@@ -19,7 +19,7 @@
     "extra": {
         "laravel": {
           "providers": [
-                "Labi9\\Elegan\\EleganServiceProvider"
+                "Jcsfran\\Elegan\\EleganServiceProvider"
             ]
         }
     },

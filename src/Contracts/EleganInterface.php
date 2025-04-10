@@ -1,6 +1,6 @@
 <?php
 
-namespace Labi9\Elegan\Contracts;
+namespace Jcsfran\Elegan\Contracts;
 
 interface EleganInterface
 {

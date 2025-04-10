@@ -1,8 +1,8 @@
 <?php
 
-namespace Labi9\Elegan\Actions;
+namespace Jcsfran\Elegan\Actions;
 
-use Labi9\Elegan\Contracts\{
+use Jcsfran\Elegan\Contracts\{
     Action,
     EleganInterface,
 };

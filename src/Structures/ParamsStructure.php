@@ -1,6 +1,6 @@
 <?php
 
-namespace Labi9\Elegan\Structures;
+namespace Jcsfran\Elegan\Structures;
 
 use Symfony\Component\HttpFoundation\Response as HttpResponse;
 

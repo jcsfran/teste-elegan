@@ -1,8 +1,8 @@
 <?php
 
-namespace Labi9\Elegan;
+namespace Jcsfran\Elegan;
 
-use Labi9\Elegan\Elegan;
+use Jcsfran\Elegan\Elegan;
 use Symfony\Component\Yaml\Yaml;
 
 class EleganHelper

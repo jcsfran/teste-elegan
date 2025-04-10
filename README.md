@@ -13,13 +13,13 @@ Instalação
 
 Utilize o comando abaixo no terminal.
 ```bash
-composer require labi9/elegan
+composer require jcsfran/elegan
 ```
 
 
 Após a instalação do pacote, será preciso publicar os arquivos para que o Elegan funcione. Utilize o seguinte comando no terminal:
 ```console
-php artisan vendor:publish --provider "Labi9\Elegan\EleganServiceProvider"
+php artisan vendor:publish --provider "Jcsfran\Elegan\EleganServiceProvider"
 ```
 
 ### Após a instalação
@@ -48,7 +48,7 @@ Adicione o middleware de segurança na variável `$routeMiddleware` em _Http/Ker
 ```php
 // Http/Kernel.php
 
-'access_docs' => \Labi9\Elegan\ValidateAccessEleganRoutes::class,
+'access_docs' => \Jcsfran\Elegan\ValidateAccessEleganRoutes::class,
 ```
 
 Acesse o arquivo _config/l5-swagger.php_ e adicione o  middleware `access_docs`.

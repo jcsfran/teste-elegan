@@ -1,6 +1,6 @@
 <?php
 
-namespace Labi9\Elegan\Console;
+namespace Jcsfran\Elegan\Console;
 
 use Carbon\Carbon;
 use Illuminate\{

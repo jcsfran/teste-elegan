@@ -1,8 +1,8 @@
 <?php
 
-namespace Labi9\Elegan\Contracts;
+namespace Jcsfran\Elegan\Contracts;
 
-use Labi9\Elegan\Structures\{
+use Jcsfran\Elegan\Structures\{
     AuthStructure,
     BasicStructure,
     ParamsStructure,

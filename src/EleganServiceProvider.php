@@ -1,9 +1,9 @@
 <?php
 
-namespace Labi9\Elegan;
+namespace Jcsfran\Elegan;
 
 use Illuminate\Support\ServiceProvider;
-use Labi9\Elegan\Console\{
+use Jcsfran\Elegan\Console\{
     GeneratePatchNoteCommand,
     GenerateRouteCommand,
 };

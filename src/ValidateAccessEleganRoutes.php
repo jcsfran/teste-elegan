@@ -1,6 +1,6 @@
 <?php
 
-namespace Labi9\Elegan;
+namespace Jcsfran\Elegan;
 
 use Closure;
 use Illuminate\Http\{

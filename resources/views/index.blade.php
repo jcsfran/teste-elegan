@@ -29,7 +29,7 @@
     </script>
 
     <div>
-        @inject('eleganHelper', 'Labi9\Elegan\EleganHelper')
+        @inject('eleganHelper', 'Jcsfran\Elegan\EleganHelper')
 
         @php($notes = $eleganHelper->patchNoteFiles())
 
