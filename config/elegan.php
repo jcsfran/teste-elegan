@@ -29,7 +29,7 @@ return [
     /*
      * Key to access the documentation
     */
-    'key' => env('ELEGAN_KEY', 'elegan'),
+    'key' => env('ELEGAN_KEY'),
 
     /*
      * Default tries to access route 

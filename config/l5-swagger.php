@@ -1,5 +1,7 @@
 <?php
 
+use Jcsfran\Elegan\ValidateAccessEleganRoutes;
+
 return [
     'default' => 'default',
     'documentations' => [
@@ -61,7 +63,7 @@ return [
              * Middleware allows to prevent unexpected access to API documentation
             */
             'middleware' => [
-                'api' => [],
+                'api' => env('ELEGAN_KEY') ? [ValidateAccessEleganRoutes::class] : [],
                 'asset' => [],
                 'docs' => [],
                 'oauth2_callback' => [],

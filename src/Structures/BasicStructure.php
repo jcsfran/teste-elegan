@@ -8,13 +8,16 @@ class BasicStructure
 {
     public function response(string $statusCode): string
     {
+        $description = HttpResponse::$statusTexts[$statusCode];
+
         $structure = str_repeat(config('elegan.space'), 8) . $statusCode . ":" . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 10) . 'description: ' . $description . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 10) . "content:" . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 12) . "application/json:" . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 14) . "schema:" . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 16) . "type: object" . PHP_EOL;
 
         if ($statusCode == HttpResponse::HTTP_OK) {
-            $structure .= str_repeat(config('elegan.space'), 10) . "content:" . PHP_EOL;
-            $structure .= str_repeat(config('elegan.space'), 12) . "application/json:" . PHP_EOL;
-            $structure .= str_repeat(config('elegan.space'), 14) . "schema:" . PHP_EOL;
-            $structure .= str_repeat(config('elegan.space'), 16) . "type: object" . PHP_EOL;
             $structure .= str_repeat(config('elegan.space'), 16) . "properties:" . PHP_EOL;
             $structure .= str_repeat(config('elegan.space'), 18) . "data:" . PHP_EOL;
             $structure .= str_repeat(config('elegan.space'), 20) . "type: object" . PHP_EOL;
@@ -24,7 +27,6 @@ class BasicStructure
 
             return $structure;
         }
-        $structure .= str_repeat(config('elegan.space'), 10) . '$ref' . ": '../'" . PHP_EOL;
 
         return $structure;
     }
@@ -39,11 +41,25 @@ class BasicStructure
 
     public function body(): string
     {
-        $structure = str_repeat(config('elegan.space'), 8) .
-            HttpResponse::HTTP_UNPROCESSABLE_ENTITY .
-            ":" .
-            PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . '$ref' . ": '../'" . PHP_EOL;
+        $statusCode = HttpResponse::HTTP_UNPROCESSABLE_ENTITY;
+        $description = HttpResponse::$statusTexts[$statusCode];
+
+        $structure = str_repeat(config('elegan.space'), 8) . $statusCode . ":" . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 10) . 'description: ' . $description . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 10) . 'content:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 12) . 'application/json:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 14) . 'schema:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 16) . 'type: object' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 16) . 'properties:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 18) . 'message:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 20) . 'type: string' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 18) . 'errors:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 20) . 'type: object' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 20) . 'properties:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 22) . 'attribute:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 24) . 'type: array' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 24) . 'items:' . PHP_EOL;
+        $structure .= str_repeat(config('elegan.space'), 26) . 'type: string' . PHP_EOL;
         $structure .= str_repeat(config('elegan.space'), 6) . "requestBody:" . PHP_EOL;
         $structure .= str_repeat(config('elegan.space'), 8) . "content:" . PHP_EOL;
         $structure .= str_repeat(config('elegan.space'), 10) . "application/json:" . PHP_EOL;

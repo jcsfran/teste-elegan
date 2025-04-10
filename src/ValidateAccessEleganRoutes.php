@@ -8,9 +8,26 @@ use Illuminate\Http\{
     Request,
     Response,
 };
+use Illuminate\Support\Facades\RateLimiter;
 
 class ValidateAccessEleganRoutes
 {
+    private function checkRequestLimit(string | null $key)
+    {
+        $hasLimit = RateLimiter::attempt(
+            $key,
+            config('elegan.rate_limit'),
+            function () {},
+            config('elegan.decay_minutes') * 60,
+        );
+
+        if (!$hasLimit) {
+            return redirect()->route('access-docs', [
+                'message' => 'aaaaa',
+            ]);
+        }
+    }
+
     public function handle(Request $request, Closure $next): RedirectResponse|Response
     {
         $requestKey = $request->input('key');
@@ -31,6 +48,8 @@ class ValidateAccessEleganRoutes
         }
 
         if ((!empty($cookie) && $cookie !== $eleganKey) || ($requestKey !== $eleganKey)) {
+            $this->checkRequestLimit($request->ip());
+
             return redirect()->route('access-docs', [
                 'message' => config('elegan.redirect.invalid_key'),
             ]);
