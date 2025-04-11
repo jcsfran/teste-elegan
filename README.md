@@ -1,4 +1,4 @@
-Elegan
+🎩 Elegan
 ===
 
 **Elegan** é um pacote desenvolvido para padronizar a documentação de rotas em projetos Laravel. Ele permite a criação de arquivos de documentação no formato **.yaml** diretamente via terminal.
