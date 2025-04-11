@@ -57,35 +57,6 @@ class ParamsStructure
             "description: Número da página" .
             PHP_EOL;
 
-        $structure .= str_repeat(config('elegan.space'), 8) . "- in: query" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . 'name: limit' . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . "schema:" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 12) . "type: integer" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . "required: false" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) .
-            "description: Limite de itens por página" .
-            PHP_EOL;
-
-        $structure .= str_repeat(config('elegan.space'), 8) . "- in: query" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . 'name: sort' . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . "schema:" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 12) . "type: string" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . "required: false" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) .
-            "description: Campo que deseja ordenar" .
-            PHP_EOL;
-
-        $structure .= str_repeat(config('elegan.space'), 8) . "- in: query" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . 'name: order' . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) . "schema:" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 12) . "type: string" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 12) . "enum:" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 14) . "- asc" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 14) . "- desc" . PHP_EOL;
-        $structure .= str_repeat(config('elegan.space'), 10) .
-            "description: Sentido de ordenação (crescente ou decrescente)" .
-            PHP_EOL;
-
         return $structure;
     }
 }
